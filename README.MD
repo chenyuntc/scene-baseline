@@ -32,9 +32,10 @@ python main.py train --model='resnet34'
 在 Titan Xp下，大概90分钟可以在验证集上得到大约0.938的准确率
 
 
-``bash
+```bash
 python main.py train --model='resnet365'
 ```
+
 使用place365的预训练模型resnet50, 可以在验证集达到**0.957**的top3分数,
 
 
