@@ -23,6 +23,7 @@ nohup python2 -m visdom.server&
 ```
 
 ### 4.训练
+训练之前还需要新建`checkpoints`文件夹用来保存模型`mkdir checkpoints`。
 注意修改utils.py 中文件路径
 
 ```bash
@@ -44,10 +45,10 @@ python main.py train --model='resnet365'
 
 ### 5.提交
 ```bash
-python main.py submit --model='resnet34' --load-path='res34_1014_1222_0.932421875' 
+python main.py submit --model='resnet34' --load-path='res34_1018_2204_0.938002232143' 
 
 ```
-会在当前目录生成`result.json`文件，直接诶提交即可
+会在当前目录生成`result.json`文件，直接提交即可
 
 ## 关于CPU运行
 把所有`.cuda()`代码去掉，就能使得程序在CPU上运行
