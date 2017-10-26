@@ -45,5 +45,5 @@ class BasicModule(t.nn.Module):
     def update_optimizer(self,lr1,lr2):
         param_groups = self.optimizer.param_groups
         param_groups[0]['lr']=lr1
-        pram_groups[1]['lr']=lr2
+        param_groups[1]['lr']=lr2
         return self.optimizer

@@ -28,7 +28,14 @@ nohup python2 -m visdom.server&
 ```bash
 python main.py train --model='resnet34'
 ```
-在 Titan Xp下，大概90分钟可以在验证集上得到大约0.94的准确率
+在 Titan Xp下，大概90分钟可以在验证集上得到大约0.938的准确率
+
+
+``bash
+python main.py train --model='resnet365'
+```
+使用place365的预训练模型resnet50, 可以在验证集达到**0.957**的top3分数,
+
 
 打开浏览器 输入http://ip:8097 可以看到训练过程。visdom 中要用到两个js文件`plotly.min.js`和`react-grid-layout.min.js`，这两个js文件被防火墙所拦截~ 所以你可能需要自备梯子才能用visdom。
 

@@ -2,6 +2,7 @@
 import torchvision as tv
 from torch import nn
 from basic_module import BasicModule
+import torch as t
 
 class ResNet(BasicModule):
     def __init__(self,model,opt=None,feature_dim=2048,name='resnet'):
@@ -37,3 +38,8 @@ def resnet101(opt):
 def resnet152(opt):
     model = tv.models.resnet152(pretrained=not opt.load_path)
     return ResNet(model,opt,name='res152')
+
+def resnet365(opt):
+    model = t.load('checkpoints/whole_resnet50_places365.pth.tar')
+    # model = tv.models.resnet50()
+    return ResNet(model,opt,name='res_365')

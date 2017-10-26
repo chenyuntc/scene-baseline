@@ -41,7 +41,6 @@ class ClsDataset(data.Dataset):
         data = self.datas['train']
         self.imgs,self.labels = data['ids'],data['labels']
         self.path = self.opt.train_dir
-        self.training = True
         self.transforms = self.train_transforms
         return self
 
@@ -49,7 +48,6 @@ class ClsDataset(data.Dataset):
         data= self.datas['test1']
         self.imgs,self.labels = data['ids'],data['labels']
         self.path = self.opt.test_dir
-        self.training = False
         self.transforms=self.val_transforms
         return self
 
@@ -57,7 +55,6 @@ class ClsDataset(data.Dataset):
         data = self.datas['val']
         self.imgs,self.labels = data['ids'],data['labels']
         self.path = self.opt.val_dir
-        self.training = False
         self.transforms=self.val_transforms
         return self
 
