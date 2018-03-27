@@ -115,7 +115,7 @@ def train(**kwargs):
             input, label,_ = data
             input = Variable(input.cuda())
             label = Variable(label.cuda())
-            output = model(input).squeeze()
+            output = model(input).view(input.size(0),-1)
             error = criterion(output, label)
             error.backward()
             optimizer.step()
